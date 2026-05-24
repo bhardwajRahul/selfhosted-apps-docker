@@ -150,17 +150,17 @@ as direct play in terms of load.
 
 ### Testing various hardware
 
-Archlinux straight on metal, docker Jellyfin.<br>
-Testing [10x FHD streams](https://i.imgur.com/nP71y0E.png),
-and 4K HDR + tonemapping till see stutter <br>
-Testing by running movies, x265 encoded, in Edge under linux.<br>
-`Throttle Transcodes` is not enabled, so that the movies are transcoded in full,
-not just 3min segments.
+Archlinux straight on metal, Jellyfin as a docker container.<br>
+Typical test is running [10x x265 FHD streams](https://i.imgur.com/nP71y0E.png),
+and 4x x265 4K HDR + tonemapping till see stutter. <br>
 
-The testing changed over time, in the early testing I did not do 4K and focused
-more on power consumption. BTW power consumption can warry a lot depending 
-on the motherboard, network cards, C-states,.. numbers are just to give
-rough idea.
+The early tests were without 4K.
+The newer test is just one FHD and one 4k stream and seeing the raw FPS.
+You can divide that number by 30 to estimate how many concurrent streams
+the igpu can handle.
+
+BTW, power consumption can vary somewhat depending on motherboard, network card,
+OS, C-states, ... these numbers are just for rough idea.
 
 * ryzen **7700X** - [22.4W](https://i.imgur.com/uxqzf6Q.png) idle
   * [10x](https://i.imgur.com/NAyfXmG.png) FHD streams
@@ -191,7 +191,10 @@ rough idea.
     [1 stream 32 fps](https://i.imgur.com/347N12D.png)
 * ultra7 **265k** - [19W](https://i.imgur.com/DnIRBO1.jpeg) idle
   * 1 stream [633 fps](https://i.imgur.com/eXUldZm.png)
-  * 1 stream 4K HDR + tonemapping [200fps](https://i.imgur.com/ktr6erU.png)
+  * 1 stream 4K HDR + tonemapping [200 fps](https://i.imgur.com/ktr6erU.png)
+* ryzen **8700GE** microPC - [8W](https://i.imgur.com/5hZLzqb.jpeg) idle
+  * 1 stream [270 fps](https://i.imgur.com/C4WehOt.png), AV1 [380 fps](https://i.imgur.com/LEwPrY1.png)
+  * 1 stream 4K HDR + tonemapping [60 fps](https://i.imgur.com/1YjpnwV.png), AV1 [70 fps](https://i.imgur.com/8htVRzB.png)
 
 
 Software used for monitoring the cpu and gpu usage

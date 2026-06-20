@@ -70,6 +70,7 @@ The minecraft server itself does not need this, but plugins might.<br>
 Like lets say dynmap would answer at `map.example.com`
 
 `Caddyfile`
+```
 (insecure_https) {
   transport http {
     tls_insecure_skip_verify

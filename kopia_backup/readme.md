@@ -180,7 +180,7 @@ Passing multiple paths as an array, they are in quotes separated by space.
 # adjust global policy
 #   kopia policy set --global --compression=zstd-fastest --keep-annual=0 --keep-monthly=12 --keep-weekly=0 --keep-daily=14 --keep-hourly=0 --keep-latest=3
 
-# BACKUP_THIS array of targets to backup,
+# BACKUP_THIS in an array of targets to backup,
 # space between quoted items is important
 # single item would be just BACKUP_THIS=('/home')
 
@@ -193,7 +193,7 @@ kopia snapshot create "${BACKUP_THIS[@]}"
 kopia repository disconnect
 
 # --------------  ERROR EXIT CODES  --------------
-# Kopia does not interrupts its run with an error exit code if a target or a repository are missing
+# kopia does not interrupt its run with an error exit code if a target or a repository are missing
 # this makes systemd OnSuccess OnFailure useless
 # here are the checks for the paths, throwing an immediate error exit code
 # this check is at the end because some backups might still get done even if something else is missing

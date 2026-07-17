@@ -1,4 +1,11 @@
-kopia server start --insecure --config-file=C:\Kopia\repository.config --log-dir=C:\Kopia\Kopia_Logs --address=127.0.0.1:51515 --server-username=admin --server-password=aaa --enable-actions
+kopia server start ^
+--config-file=C:\Kopia\repository.config ^
+--insecure ^
+--address=127.0.0.1:51515 ^
+--server-username=admin --server-password=aaa ^
+--log-dir=C:\Kopia\Kopia_Logs ^
+--cache-directory=C:\Kopia\Kopia_Cache ^
+--enable-actions
 
 :: to have full functinality of a kopia server
 :: replace the above command with the one below
